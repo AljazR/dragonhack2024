@@ -51,9 +51,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/dodaj" element={<Dodaj />} />
             <Route path="/dolzniki" element={<Dolzniki />} />
-          
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
 
       </body>
 
