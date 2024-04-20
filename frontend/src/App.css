@@ -1,3 +1,48 @@
+
+
+
+
+form {
+
+  font-size: 40px;
+  /* size: 20px; */
+}
+
+form input {
+  font-size: 40px;
+  /* size: 20px; */
+}
+
+ul {
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 20;
+  overflow: hidden;
+  }
+
+  li {
+  float: left;
+  }
+
+  li a {
+  display: block;
+  padding: 20px;
+  /* background-color: #dddddd; */
+  color: white;
+  }
+
+  li b {
+    display: block;
+    padding: 20px;
+    /* background-color: #dddddd; */
+    color: white;
+    font-size: 40px;
+    padding-right: 700px;
+    }
+
+
+
 .App {
   text-align: center;
 }
