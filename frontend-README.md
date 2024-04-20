@@ -1,5 +1,7 @@
 # TPO react
 
+Že narejene komponente, samo za kopirat:
+https://ui.shadcn.com/
 
 Uporabi ta ukaz npx create-react-app yadayadayada.
 Saj se nekaj da brez tega, ampak basically moraš iste stvari naredit.
