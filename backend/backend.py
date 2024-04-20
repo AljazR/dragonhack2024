@@ -5,6 +5,11 @@ from gpt import get_message
 
 app = Flask(__name__)
 
+from flask_cors import CORS
+CORS(app)
+# CORS(app, origins='http://localhost:3000', methods=['GET', 'POST'])
+# CORS(app, supports_credentials=True)
+
 
 @app.route('/')
 def home():
@@ -23,6 +28,11 @@ def send_sms():
 
     # text = get_message(request.json['message'])
     text = "Dj mi dnar!"
+
+    print("request:")
+    print(request)
+    print("request.json:")
+    print(request.json)
 
     message = client.messages.create(
         body=text,
