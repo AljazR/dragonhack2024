@@ -5,48 +5,51 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@r
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./pages/Navbar";
-// import Home from "./pages/Home";
+
+import NavbarRouter from "./pages/NavbarRouter";
+import Home from "./pages/Home";
 import Dolzniki from "./pages/Dolzniki";
 import Dodaj from "./pages/Dodaj";
 
 function App() {
   return (
     <div className="App">
+      
       <header className="App-header">
         
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
-        {/* <Navbar /> */}
+        
+        <Navbar />
       </header>
-
 
 
 
       <body>
 
-        
 
+
+        {/* <Navbar />
+        <>
+          <Navbar />
+        </> */}
         <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Navbar />} />
-            <Route path="dodaj-dolznika" element={<Dodaj />} />
-            <Route path="dolzniki" element={<Dolzniki />} />
+          <Route path="/" element={<Home />} />
 
-            {/* <Route path="*" element={<NoPage />} /> */}
-          
+              {/* <Route path="/" element={<Dodaj />} /> */}
+              {/* <Route path="dodaj-dolznika" element={<Dodaj />} /> */}
+              <Route path="/dolzniki" element={<Dolzniki />} />
+
+              {/* <Route path="*" element={<NoPage />} /> */}
+          {/* </Route>   */}
         </Routes>
+
       </BrowserRouter>
+
+        {/* <div>
+          <Navbar />
+        </div> */}
+        {/* <Dodaj /> */}
+        
 
         <div>
           <Accordion type="single" collapsible>
