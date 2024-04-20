@@ -10,7 +10,7 @@ app = Flask(__name__)
 def home():
     return """
     <h1>Juicer is running \U0001F34B \U00002192 \U0001F9C3</h1>
-    <p>Send a POST request to /send_sms with a JSON body containing a message and phone_number to send an SMS</p>
+    <p>Send a POST request to /send_sms with a JSON body to send an SMS.</p>
     """
 
 

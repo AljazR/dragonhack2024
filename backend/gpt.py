@@ -1,7 +1,7 @@
 import os
 import openai
 
-TOKEN = os.environ["API_TOKEN"]
+TOKEN = os.environ["OPENAI_API_TOKEN"]
 BASE_URL = "https://openai-proxy.sellestial.com/api"
 
 
