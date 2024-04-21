@@ -9,8 +9,8 @@
                 "platform": "SMS",
                 "contact": "+38651268632",
                 "promt_params": {
-                    "money": "150",
-                    "reason": "Ccncert tickets",
+                    "money": "150€",
+                    "reason": "Concert tickets",
                     "aggression": "6",
                     "style": "mafia"
                 }
@@ -22,7 +22,7 @@
                 "platform": "Email",
                 "contact": "nejc.marolt@yahoo.com",
                 "promt_params": {
-                    "money": "5",
+                    "money": "5€",
                     "reason": "Coctail",
                     "aggression": "3",
                     "style": "blood feud"
@@ -35,7 +35,7 @@
                 "platform": "Viber",
                 "contact": "+1234567890",
                 "promt_params": {
-                    "money": "50",
+                    "money": "50€",
                     "reason": "Car gas",
                     "aggression": "4",
                     "style": "friendly"
