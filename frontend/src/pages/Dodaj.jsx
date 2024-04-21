@@ -17,31 +17,7 @@ import axios from 'axios';
 //   );
 // }
 
-function Slider(props) {
-  const shoot = (value) => {
-    // alert(val);
-    console.log(value)
-  }
 
-  const [data, setData] = useState(0);
-
-  return (
-    <>
-      <p>{data}</p>
-      <p>{props.id}</p>
-      <input 
-        type="range" 
-        className='slider' 
-        width="100%" 
-        min="0" 
-        max="10" 
-        value={data} 
-        onChange={(e) => setData(e.target.value)} 
-        onClick={() => shoot(data)}
-      />
-    </>
-  );
-}
 
 
 const Dodaj = () => {
@@ -49,6 +25,14 @@ const Dodaj = () => {
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [amount, setAmount] = useState('');
+  const [sending_interval, setSendInterval] = useState('');
+  const [reason, setReason] = useState('');
+  const [style, setStyle] = useState('');
+
+
+  const [slider1, setData1] = useState(0);
+  // const [slider2, setData2] = useState(0);
+
 
     // Styles for alignment
     const styleParent = {
@@ -65,6 +49,12 @@ const Dodaj = () => {
       height: "600px",
       borderLeft: "2px solid #e0e0e3"
     };
+
+
+
+
+
+
 
   const sendSMS = async (name, phoneNumber) => {
     /*try {
@@ -94,10 +84,36 @@ const Dodaj = () => {
       // Handle error
     }*/
 
-    const url = 'http://127.0.0.1:5000/send_sms';
+
+    // """
+    // Request format (JSON):
+    // "user": "Matevž Vidovič",
+    // "debtor_name": "Sebastjan Kordiš",
+    // "sending_interval": "15min",
+    // "platform": "Viber",
+    // "contact": "+1234567890",
+    // "promt_params": {
+    //     "money": "50",
+    //     "reason": "Car gas",
+    //     "aggression": "4",
+    //     "style": "friendly"
+    // }
+    // """
+
+    const url = 'http://127.0.0.1:5000/new_debtor';
     const data = {
-        phone_number: phoneNumber,
-        message: name
+        "user": "Matevž Vidovič",
+        "debtor_name": name,
+        "contact": phoneNumber,
+        "sending_interval": "15min",
+        "platform": "Viber",
+        "promt_params": {
+            money: amount,
+            reason: "Car gas",
+            aggression: slider1,
+            style: "friendly"
+        }
+
     };
 
     fetch(url, {
@@ -107,7 +123,14 @@ const Dodaj = () => {
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
+    .then((response) => {
+      console.log(response.json());
+      const text = response.json()["text"];
+      const msg = "First message sent: \n" + text;
+      alert(msg)
+
+      
+    })
     .then(data => console.log(data))
     .catch((error) => {
         console.error('Error:', error);
@@ -124,7 +147,7 @@ const Dodaj = () => {
     console.log("Phone Number:", phoneNumber);
     console.log("Amount:", amount);
 
-    sendSMS(name, phoneNumber);
+    sendSMS(name, phoneNumber, amount, slider1);
 
     // axios.post('https://localhost:5000/send_sms', {
     //   // Add parameters here
@@ -168,6 +191,9 @@ const Dodaj = () => {
     setName('');
     setPhoneNumber('');
     setAmount('');
+    setSendInterval('');
+    setReason('');
+    setStyle('');
   };
 
     return (
@@ -177,7 +203,7 @@ const Dodaj = () => {
         <form onSubmit={handleSubmit}>
         <br/>
 
-        <label for="name">Name:</label><br/>
+        <label for="name">Debtor's name:</label><br/>
         <input type="text" id="name" name="name"
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -203,10 +229,68 @@ const Dodaj = () => {
       </div>
 
       <div style={styleRight}>
+
         <br/>
-        <Slider id={ "sld 1" }/>
-        <br/><br/><br/>
-        <Slider id={ "sld 2" }/>
+        <p>Agressiveness</p>
+        <input 
+          type="range" 
+          className='slider' 
+          width="100%" 
+          min="0" 
+          max="10" 
+          value={slider1} 
+          onChange={(e) => setData1(e.target.value)} 
+          // onClick={() => shoot(data)}
+        />
+        <p>{slider1}</p>
+      
+        <br/>
+
+        {/* "sending_interval": "15min",
+        "platform": "Viber",
+        "promt_params": {
+            money: amount,
+            reason: "Car gas",
+            aggression: slider1,
+            style: "friendly" */}
+        <form>
+        <label for="sending_interval">Sending interval:</label><br/>
+        <input type="text" id="sending_interval" name="sending_interval"
+        value={sending_interval}
+        onChange={(e) => setSendInterval(e.target.value)}
+        /><br/>
+
+        <label for="reason">Reason:</label><br/>
+        <input type="text" id="reason" name="reason"
+        value={reason}
+        onChange={(e) => setReason(e.target.value)}
+        /><br/>
+
+        <br/>
+
+        <label for="style">In the style of:</label><br/>
+        <input type="text" id="style" name="style"
+        value={style}
+        onChange={(e) => setStyle(e.target.value)}
+        /><br/>
+        </form>
+
+
+        {/* <Slider id={ "sld 2" }/> */}
+        
+        {/* <p>{slider2}</p>
+        <p>{props.id}</p>
+        <input 
+          type="range" 
+          className='slider' 
+          width="100%" 
+          min="0" 
+          max="10" 
+          value={slider2} 
+          onChange={(e) => setData2(e.target.value)} 
+          // onClick={() => shoot(data)}
+        /> */}
+      
       </div>
     </div>
 

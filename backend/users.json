@@ -9,7 +9,7 @@
                 "platform": "SMS",
                 "contact": "+38651268632",
                 "promt_params": {
-                    "money": "150€",
+                    "money": "150\u20ac",
                     "reason": "Concert tickets",
                     "aggression": "6",
                     "style": "mafia"
@@ -22,7 +22,7 @@
                 "platform": "Email",
                 "contact": "nejc.marolt@yahoo.com",
                 "promt_params": {
-                    "money": "5€",
+                    "money": "5\u20ac",
                     "reason": "Coctail",
                     "aggression": "3",
                     "style": "blood feud"
@@ -35,7 +35,33 @@
                 "platform": "Viber",
                 "contact": "+1234567890",
                 "promt_params": {
-                    "money": "50€",
+                    "money": "50\u20ac",
+                    "reason": "Car gas",
+                    "aggression": "4",
+                    "style": "friendly"
+                }
+            },
+            {
+                "debtor_name": "rrrr",
+                "sending_interval": "15min",
+                "last_sent": "2024-04-21 09:45:52",
+                "platform": "Viber",
+                "contact": "weee",
+                "promt_params": {
+                    "money": "wwww",
+                    "reason": "Car gas",
+                    "aggression": "4",
+                    "style": "friendly"
+                }
+            },
+            {
+                "debtor_name": "ewrwe",
+                "sending_interval": "15min",
+                "last_sent": "2024-04-21 10:00:59",
+                "platform": "Viber",
+                "contact": "wer",
+                "promt_params": {
+                    "money": "rwer",
                     "reason": "Car gas",
                     "aggression": "4",
                     "style": "friendly"
