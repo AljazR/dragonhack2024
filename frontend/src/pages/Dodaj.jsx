@@ -55,7 +55,6 @@ const Dodaj = () => {
 
 
 
-
   const sendSMS = async (name, phoneNumber) => {
     /*try {
       const url = 'https://localhost:5000/send_sms';
@@ -105,33 +104,57 @@ const Dodaj = () => {
         "user": "Matevž Vidovič",
         "debtor_name": name,
         "contact": phoneNumber,
-        "sending_interval": "15min",
+        "sending_interval": sending_interval,
         "platform": "Viber",
         "promt_params": {
             money: amount,
-            reason: "Car gas",
+            reason: reason,
             aggression: slider1,
-            style: "friendly"
+            style: style
         }
 
     };
 
-    fetch(url, {
+    const fetchPromise =  fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     })
-    .then((response) => {
-      console.log(response.json());
-      const text = response.json()["text"];
+
+    ;(await fetchPromise).json().then((response) => {
+
+      console.log("response:");
+      console.log(response);
+      
+      const text = response.message
       const msg = "First message sent: \n" + text;
       alert(msg)
 
       
     })
-    .then(data => console.log(data))
+
+    // fetchPromise.then((response) => {
+
+    //   const respJson = response.json()
+
+    //   // console.log("response:");
+    //   // console.log(response);
+
+    //   console.log("response.json()");
+    //   console.log(respJson);
+
+
+
+
+    //   const text = respJson["<value>"].message
+    //   const msg = "First message sent: \n" + text;
+    //   alert(msg)
+
+      
+    // })
+    // .then(data => console.log(data))
     .catch((error) => {
         console.error('Error:', error);
     });
