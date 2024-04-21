@@ -35,6 +35,8 @@ def new_debtor():
     """
 
     new_debtor = request.get_json()
+    print("new_debtor")
+    print(new_debtor)
 
     # Load existing data from file
     with open('users.json', 'r') as f:

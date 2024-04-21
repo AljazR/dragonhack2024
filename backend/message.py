@@ -40,8 +40,8 @@ def send_sms(request):
     auth_token = os.environ['TWILIO_AUTH_TOKEN']
     client = Client(account_sid, auth_token)
 
-    text = get_message(request)
-    # text = "Dj mi dnar!"
+    # text = get_message(request)
+    text = "Dj mi dnar!"
 
     # phone_number = request.get_json()['contact']
     phone_number = "+38651268632"
