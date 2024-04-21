@@ -28,6 +28,7 @@ ul {
   li a {
   display: block;
   padding: 20px;
+  margin: 10px 0 0 0;
   /* background-color: #dddddd; */
   color: white;
   }
@@ -35,6 +36,7 @@ ul {
   li b {
     display: block;
     padding: 20px;
+    margin: 10px 0 0 0;
     /* background-color: #dddddd; */
     color: white;
     font-size: 40px;

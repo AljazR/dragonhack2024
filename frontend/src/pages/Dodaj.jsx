@@ -49,7 +49,16 @@ const Dodaj = () => {
       height: "600px",
       borderLeft: "2px solid #e0e0e3"
     };
-
+    const styleImgLeft = {
+      height: 100,
+      width: 100,
+      float: "left"
+    }
+    const styleImgRight = {
+      height: 100,
+      width: 100,
+      float: "right"
+    }
 
 
 
@@ -254,17 +263,21 @@ const Dodaj = () => {
       <div style={styleRight}>
 
         <br/>
-        <p>Agressiveness</p>
-        <input 
-          type="range" 
-          className='slider' 
-          width="100%" 
-          min="1" 
-          max="7" 
-          value={slider1} 
-          onChange={(e) => setData1(e.target.value)} 
-          // onClick={() => shoot(data)}
-        />
+        <div>
+          <img src={require('./medo.png')} style={styleImgLeft}></img>
+          <img src={require('./walter.png')} style={styleImgRight}></img>
+          <p>Agressiveness</p>
+          <input 
+            type="range" 
+            className='slider' 
+            width="100px" 
+            min="1" 
+            max="7" 
+            value={slider1} 
+            onChange={(e) => setData1(e.target.value)} 
+            // onClick={() => shoot(data)}
+          />
+        </div>
         <p>{slider1}</p>
       
         <br/>
