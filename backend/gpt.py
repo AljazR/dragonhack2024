@@ -5,18 +5,21 @@ TOKEN = os.environ["OPENAI_API_TOKEN"]
 BASE_URL = "https://openai-proxy.sellestial.com/api"
 
 
-def get_message(params):
-    '''
-    params:
-    {
-        "sender": "Rihard Šmid",
-        "reason": "Concert tickets",
-        "agressivnes": 5,
-        "mafiozo": True,
-        "citations": True,
-        "stay_friends": False
+def get_message(request):
+    """
+    Request format (JSON):
+    "user": "Matevž Vidovič",
+    "debtor_name": "Sebastjan Kordiš",
+    "sending_interval": "15min",
+    "platform": "Viber",
+    "contact": "+1234567890",
+    "promt_params": {
+        "money": "50€",
+        "reason": "Car gas",
+        "aggression": "4",
+        "style": "friendly"
     }
-    '''
+    """
 
     TOKEN = os.environ["OPENAI_API_TOKEN"]
     BASE_URL = "https://openai-proxy.sellestial.com/api"
@@ -28,37 +31,53 @@ def get_message(params):
     messages = [
         {
             "role": "system",
-                    "content": "As a good post writer, your job is to write tweets that express protest on a given topic. \
-                    When writing these tweets, it is important to use the same language as the topic of protest is written in.\
-                    Also at the end of the post mention relavant politicians, that are responsible for the topic of protest. They have to be from the country of language of the post.",
+                    "content": "You are a normal dude, from whome a friend borrowed some money. You want to remind him to return it. \
+                                So you decided to send him a peridoical message on specified platform with a web app Juicer. \
+                                Your job is to write the best message that is suitable for a platform and fullfills the next conditions: \
+                                    - You include the amount of money borrowed. \
+                                    - You include the reason debtor borrowed the money. \
+                                    - You make the message agressive based on the agression parameter form 1(not agressive at all) to 7(very agressive)\
+                                    - You use the style of message based on the style parameter: friendly, neutral, passive agressive, blood feud, mafia boss, ... \
+                                    - You include the name of the debtor in the message. \
+                                    - You include the name of the user in the message.\
+                                You don't have to use direct variables. but modify them so it makes sense in the message."
         },
-        {"role": "user", "content": "Davki kmetov"},
+        
+        {"role": "user", "content": '"user": "Matevž Vidovič",\
+                                    "debtor_name": "Sebastjan Kordiš",\
+                                    "platform": "SMS",\
+                                    "promt_params": {\
+                                        "money": "50€",\
+                                        "reason": "Car gas",\
+                                        "aggression": "4",\
+                                        "style": "mafia boss"\
+                                    }'
+        },
         {
             "role": "assistant",
-                    "content": "Obdavčevanje naših pridnih kmetov je sramota! Slovenija se mora zavedati, da je naša kmetijska industrija hrbtenica našega gospodarstva. \
-                                                Nehajte kaznovati tiste, ki nam zagotavljajo hrano, in začnite jih podpirati! #StopDavkomNaKmete #SlovenskaKmetijstvo #PodpriteKmete @MKGP_RS @vladaRS",
+                    "content": "Listen Sebastjan, there's a debt that needs to be paid. You know which one I'm talking about. No more delays. Handle this now or there will be consequences. I want my 50€ before next morning.\
+                                Matevž",
         },
-        {"role": "user", "content": "Davki kmetov"},
+        {"role": "user", "content": '"debtor_name": "Sebastjan Kordi\u0161",\
+                                    "platform": "SMS",\
+                                    "promt_params": {\
+                                        "money": "50€",\
+                                        "reason": "Car gas",\
+                                        "aggression": "1",\
+                                        "style": "friendly"\
+                                    }'
+        },
         {
             "role": "assistant",
-                    "content": "Obdavčevanje naših pridnih kmetov je sramota! Slovenija se mora zavedati, da je naša kmetijska industrija hrbtenica našega gospodarstva. \
-                                                Nehajte kaznovati tiste, ki nam zagotavljajo hrano, in začnite jih podpirati! #StopDavkomNaKmete #SlovenskaKmetijstvo #PodpriteKmete @MKGP_RS @vladaRS",
+                    "content": "Hey Sebastjan, I hope you are doing well. I just wanted to remind you that you borrowed 50€ from me for car gas.\
+                                 Matevž Vidovič",
         },
-        {"role": "user", "content": "Davki kmetov"},
-        {
-            "role": "assistant",
-                    "content": "Obdavčevanje naših pridnih kmetov je sramota! Slovenija se mora zavedati, da je naša kmetijska industrija hrbtenica našega gospodarstva. \
-                                                Nehajte kaznovati tiste, ki nam zagotavljajo hrano, in začnite jih podpirati! #StopDavkomNaKmete #SlovenskaKmetijstvo #PodpriteKmete @MKGP_RS @vladaRS",
-        },
-        {"role": "user", "content": f"{params}"},
+        {"role": "user", "content": f"{request.get_json()}"},
     ]
 
     response = client.chat.completions.create(
         model=model,
         messages=messages,
     )
-
-    if response.ok:
-        print(response.json()["choices"][0]["message"]["content"])
-
-    return response.json()["choices"][0]["message"]["content"]
+   
+    return response.choices[0].message.content

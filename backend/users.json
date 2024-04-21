@@ -3,13 +3,13 @@
         "user": "Matev\u017e Vidovi\u010d",
         "debtors": [
             {
-                "debtor_name": "Alja\u017e Rakovec",
+                "debtor_name": "Alja\u017e Rakovec1",
                 "sending_interval": "5min",
-                "last_sent": "2019-12-12 12:00:00",
-                "platform": "SMS",
+                "last_sent": "2024-04-21 10:32:50",
+                "platform": "Viber",
                 "contact": "+38651268632",
                 "promt_params": {
-                    "money": "150€",
+                    "money": "150\u20ac",
                     "reason": "Concert tickets",
                     "aggression": "6",
                     "style": "mafia"
@@ -18,11 +18,11 @@
             {
                 "debtor_name": "Nejc Marolt",
                 "sending_interval": "24h",
-                "last_sent": "2019-12-12 12:00:00",
+                "last_sent": "2024-04-21 10:32:50",
                 "platform": "Email",
                 "contact": "nejc.marolt@yahoo.com",
                 "promt_params": {
-                    "money": "5€",
+                    "money": "5\u20ac",
                     "reason": "Coctail",
                     "aggression": "3",
                     "style": "blood feud"
@@ -31,11 +31,11 @@
             {
                 "debtor_name": "Sebastjan Kordi\u0161",
                 "sending_interval": "15min",
-                "last_sent": "2019-12-12 12:00:00",
+                "last_sent": "2024-04-21 10:32:50",
                 "platform": "Viber",
                 "contact": "+1234567890",
                 "promt_params": {
-                    "money": "50€",
+                    "money": "50\u20ac",
                     "reason": "Car gas",
                     "aggression": "4",
                     "style": "friendly"

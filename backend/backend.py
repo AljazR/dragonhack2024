@@ -120,7 +120,10 @@ def send_all_messages():
                     }
                     send_message(jsonify(request))
 
-        threading.Timer(60, send_all_messages).start()
+                    with open('users.json', 'w') as f:
+                        json.dump(data, f, indent=4)
+
+        threading.Timer(120, send_all_messages).start()
 
 # Start the scheduler
 send_all_messages()
