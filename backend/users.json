@@ -1,0 +1,46 @@
+[
+    {
+        "user": "Matev\u017e Vidovi\u010d",
+        "debtors": [
+            {
+                "debtor_name": "Alja\u017e Rakovec",
+                "sending_interval": "5min",
+                "last_sent": "2019-12-12 12:00:00",
+                "platform": "SMS",
+                "contact": "+38651268632",
+                "promt_params": {
+                    "money": "150",
+                    "reason": "Ccncert tickets",
+                    "aggression": "6",
+                    "style": "mafia"
+                }
+            },
+            {
+                "debtor_name": "Nejc Marolt",
+                "sending_interval": "24h",
+                "last_sent": "2019-12-12 12:00:00",
+                "platform": "Email",
+                "contact": "nejc.marolt@yahoo.com",
+                "promt_params": {
+                    "money": "5",
+                    "reason": "Coctail",
+                    "aggression": "3",
+                    "style": "blood feud"
+                }
+            },
+            {
+                "debtor_name": "Sebastjan Kordi\u0161",
+                "sending_interval": "15min",
+                "last_sent": "2019-12-12 12:00:00",
+                "platform": "Viber",
+                "contact": "+1234567890",
+                "promt_params": {
+                    "money": "50",
+                    "reason": "Car gas",
+                    "aggression": "4",
+                    "style": "friendly"
+                }
+            }
+        ]
+    }
+]
