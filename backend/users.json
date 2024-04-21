@@ -5,7 +5,7 @@
             {
                 "debtor_name": "Alja\u017e Rakovec1",
                 "sending_interval": "5min",
-                "last_sent": "2024-04-21 10:32:50",
+                "last_sent": "2024-04-21 11:04:58",
                 "platform": "Viber",
                 "contact": "+38651268632",
                 "promt_params": {
@@ -31,7 +31,7 @@
             {
                 "debtor_name": "Sebastjan Kordi\u0161",
                 "sending_interval": "15min",
-                "last_sent": "2024-04-21 10:32:50",
+                "last_sent": "2024-04-21 11:02:58",
                 "platform": "Viber",
                 "contact": "+1234567890",
                 "promt_params": {
@@ -41,6 +41,7 @@
                     "style": "friendly"
                 }
             }
+
         ]
     }
 ]

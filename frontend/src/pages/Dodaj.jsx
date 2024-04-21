@@ -105,7 +105,7 @@ const Dodaj = () => {
         "debtor_name": name,
         "contact": phoneNumber,
         "sending_interval": sending_interval,
-        "platform": "Viber",
+        "platform": "SMS",
         "promt_params": {
             money: amount,
             reason: reason,
@@ -259,8 +259,8 @@ const Dodaj = () => {
           type="range" 
           className='slider' 
           width="100%" 
-          min="0" 
-          max="10" 
+          min="1" 
+          max="7" 
           value={slider1} 
           onChange={(e) => setData1(e.target.value)} 
           // onClick={() => shoot(data)}
