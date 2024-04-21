@@ -3,11 +3,68 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 
+
+
+// function TextInput(props) {
+
+//   const [value, setValue] = useState(0);
+
+//   return (
+//     <>
+//       <label htmlFor={props.id}>{props.label}</label><br/>
+//       <input type="text" id={props.id} name={props.id} onChange={(e) => setValue(e.target.value)}/>
+//     </>
+//   );
+// }
+
+function Slider(props) {
+  const shoot = (value) => {
+    // alert(val);
+    console.log(value)
+  }
+
+  const [data, setData] = useState(0);
+
+  return (
+    <>
+      <p>{data}</p>
+      <p>{props.id}</p>
+      <input 
+        type="range" 
+        className='slider' 
+        width="100%" 
+        min="0" 
+        max="10" 
+        value={data} 
+        onChange={(e) => setData(e.target.value)} 
+        onClick={() => shoot(data)}
+      />
+    </>
+  );
+}
+
+
 const Dodaj = () => {
 
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [amount, setAmount] = useState('');
+
+    // Styles for alignment
+    const styleParent = {
+      margin: "0 0 20% 20%",
+      padding: "5% 0 0 0"
+    };
+    const styleLeft = {
+      float: "left"
+    };
+    const styleRight = {
+      float: "left",
+      margin: "0 0 0 5%",
+      padding: "0 0 0 5%",
+      height: "600px",
+      borderLeft: "2px solid #e0e0e3"
+    };
 
   const sendSMS = async (name, phoneNumber) => {
     /*try {
@@ -114,7 +171,9 @@ const Dodaj = () => {
   };
 
     return (
-      <div>
+
+    <div style={styleParent}>
+      <div style={styleLeft}>
         <form onSubmit={handleSubmit}>
         <br/>
 
@@ -141,7 +200,17 @@ const Dodaj = () => {
 
         <input type="submit" value="Add"></input>
         </form>
+      </div>
+
+      <div style={styleRight}>
+        <br/>
+        <Slider id={ "sld 1" }/>
+        <br/><br/><br/>
+        <Slider id={ "sld 2" }/>
+      </div>
     </div>
+
+
     );
   };
   
