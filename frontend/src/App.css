@@ -19,28 +19,60 @@ ul {
   margin: 0;
   padding: 20;
   overflow: hidden;
-  }
+}
 
-  li {
+li {
   float: left;
-  }
+}
 
-  li a {
+li a {
   display: block;
   padding: 20px;
   /* background-color: #dddddd; */
   color: white;
-  }
+}
 
-  li b {
-    display: block;
-    padding: 20px;
-    /* background-color: #dddddd; */
-    color: white;
-    font-size: 40px;
-    padding-right: 700px;
-    }
+li b {
+  display: block;
+  padding: 20px;
+  /* background-color: #dddddd; */
+  color: white;
+  font-size: 40px;
+  padding-right: 700px;
+}
 
+
+.slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 400px;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.6;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 0.8;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #c2980f;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #c2980f;
+  cursor: pointer;
+}
 
 
 .App {
