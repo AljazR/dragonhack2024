@@ -11,8 +11,49 @@ function Slider(props) {
 
   return (
     <>
+      <br/><br/>
+      <b>{props.id}</b>
       <p>{data}</p>
-      <p>{props.id}</p>
+      <input 
+        type="range" 
+        className='slider' 
+        width="100%" 
+        min="0" 
+        max="10" 
+        value={data} 
+        onChange={(e) => setData(e.target.value)} 
+        onClick={() => shoot(data)}
+      />
+    </>
+  );
+}
+
+function SliderWithImg(props) {
+  const shoot = (value) => {
+    // alert(val);
+    console.log(value)
+  }
+
+  const [data, setData] = useState(0);
+
+  const styleImgLeft = {
+    height: 100,
+    width: 100,
+    float: "left"
+  }
+  const styleImgRight = {
+    height: 100,
+    width: 100,
+    float: "right"
+  }
+
+  return (
+    <>
+      <img src={require('./medo.png')} style={styleImgLeft}></img>
+      <img src={require('./walter.png')} style={styleImgRight}></img>
+      <br/><br/>
+      <b>{props.id}</b>
+      <p>{data}</p>
       <input 
         type="range" 
         className='slider' 
@@ -60,6 +101,16 @@ const Dodaj = () => {
     height: "600px",
     borderLeft: "2px solid #e0e0e3"
   };
+  const styleImgLeft = {
+    height: 100,
+    width: 100,
+    float: "left"
+  }
+  const styleImgRight = {
+    height: 100,
+    width: 100,
+    float: "right"
+  }
 
   // Function to handle form submission
   const handleSubmit = (event) => {
@@ -101,8 +152,8 @@ const Dodaj = () => {
             onChange={(e) => setAmount(e.target.value)}
           /><br/><br/>
 
-          <TextInput id={ "name" } label={ "Name:" }/>
-          <br/><br/>
+          {/* <TextInput id={ "name" } label={ "Name:" }/>
+          <br/><br/> */}
           
           <input type="submit" value="Add"></input>
         </form>
@@ -110,9 +161,24 @@ const Dodaj = () => {
       
       <div style={styleRight}>
         <br/>
-        <Slider id={ "sld 1" }/>
+        
+        {/* TOLE STA SLIKI, zgorej sta še stila za slike */}
+        <div>
+          <img src={require('./medo.png')} style={styleImgLeft}></img>
+          <img src={require('./walter.png')} style={styleImgRight}></img>
+          <Slider id={ "Aggression" }/>
+        </div>
+        
         <br/><br/><br/>
-        <Slider id={ "sld 2" }/>
+        
+        <SliderWithImg id={ "Aggression" }/>
+        
+        <br/><br/><br/>
+        
+        {/* <div>
+          <Slider id={ "sld 2" }/>
+        </div> */}
+
       </div>
     </div>
   );
