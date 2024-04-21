@@ -239,24 +239,39 @@ const Dodaj = () => {
         <input type="text" id="name" name="name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        /><br/>
+        /><br/><br/>
 
 
-        <label for="phnum">Phone number:</label><br/>
+        <label for="phnum">Contact info:</label><br/>
         <input 
         type="text" id="phnum" name="phnum"
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.target.value)}
         /><br/><br/>
 
+        <label for="media">Choose a medium:</label>
 
-        <label for="amount">Owed amount (add units):</label><br/>
+        <select name="media" id="media">
+          <option value="sms">SMS</option>
+          <option value="viber">Viber</option>
+          <option value="email">e-mail</option>
+          <option value="limo">Black limo</option>
+        </select> 
+        <br/><br/>
+
+        <label for="amount">Owed amount:</label><br/>
         <input type="text" id="amount" name="amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
         /><br/><br/>
 
-        <input type="submit" value="Add"></input>
+        <label for="sending_interval">Sending interval:</label><br/>
+        <input type="text" id="sending_interval" name="sending_interval"
+        value={sending_interval}
+        onChange={(e) => setSendInterval(e.target.value)}
+        /><br/><br/>
+
+        {/* <input type="submit" value="Add debtor"></input> */}
         </form>
       </div>
 
@@ -290,11 +305,7 @@ const Dodaj = () => {
             aggression: slider1,
             style: "friendly" */}
         <form>
-        <label for="sending_interval">Sending interval:</label><br/>
-        <input type="text" id="sending_interval" name="sending_interval"
-        value={sending_interval}
-        onChange={(e) => setSendInterval(e.target.value)}
-        /><br/>
+        
 
         <label for="reason">Reason:</label><br/>
         <input type="text" id="reason" name="reason"
@@ -308,7 +319,8 @@ const Dodaj = () => {
         <input type="text" id="style" name="style"
         value={style}
         onChange={(e) => setStyle(e.target.value)}
-        /><br/>
+        /><br/><br/>
+        <input type="submit" value="Add debtor"></input>
         </form>
 
 
@@ -326,8 +338,9 @@ const Dodaj = () => {
           onChange={(e) => setData2(e.target.value)} 
           // onClick={() => shoot(data)}
         /> */}
-      
+        
       </div>
+      
     </div>
 
 
