@@ -3,7 +3,6 @@
 
 
 form {
-
   font-size: 40px;
   /* size: 20px; */
 }
@@ -28,6 +27,7 @@ li {
 li a {
   display: block;
   padding: 20px;
+  margin: 10px 0 0 0;
   /* background-color: #dddddd; */
   color: white;
 }

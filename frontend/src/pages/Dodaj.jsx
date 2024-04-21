@@ -170,7 +170,7 @@ const Dodaj = () => {
         </div>
         
         <br/><br/><br/>
-        
+
         <SliderWithImg id={ "Aggression" }/>
         
         <br/><br/><br/>
@@ -185,18 +185,3 @@ const Dodaj = () => {
 };
 
 export default Dodaj;
-
-/*
-
-"user": "Matevž Vidovič",
-    "debtor_name": "Sebastjan Kordiš",
-    "sending_interval": "15min",
-    "platform": "Viber",
-    "promt_params": {
-        "money": "50",
-        "reason": "Car gas",
-        "aggression": "4",
-        "style": "friendly"
-    }
-
-*/
