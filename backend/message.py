@@ -44,7 +44,7 @@ def send_sms(request):
     # text = "Dj mi dnar!"
 
     # phone_number = request.get_json()['contact']
-    phone_number = "+38651268632"
+    phone_number = os.environ['DEFAULT_PHONE_NUMBER']
 
     message = client.messages.create(
         body=text,
