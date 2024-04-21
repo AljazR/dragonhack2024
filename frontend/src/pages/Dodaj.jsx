@@ -271,7 +271,7 @@ const Dodaj = () => {
         onChange={(e) => setSendInterval(e.target.value)}
         /><br/><br/>
 
-        {/* <input type="submit" value="Add debtor"></input> */}
+        <input type="submit" value="Add debtor"></input>
         </form>
       </div>
 
@@ -320,7 +320,7 @@ const Dodaj = () => {
         value={style}
         onChange={(e) => setStyle(e.target.value)}
         /><br/><br/>
-        <input type="submit" value="Add debtor"></input>
+        {/* <input type="submit" value="Add debtor"></input> */}
         </form>
 
 

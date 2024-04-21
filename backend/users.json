@@ -5,7 +5,7 @@
             {
                 "debtor_name": "Alja\u017e Rakovec1",
                 "sending_interval": "5min",
-                "last_sent": "2024-04-21 11:41:16",
+                "last_sent": "2024-04-21 11:53:21",
                 "platform": "Viber",
                 "contact": "+38651268632",
                 "promt_params": {
@@ -31,7 +31,7 @@
             {
                 "debtor_name": "Sebastjan Kordi\u0161",
                 "sending_interval": "15min",
-                "last_sent": "2024-04-21 11:35:16",
+                "last_sent": "2024-04-21 11:53:21",
                 "platform": "Viber",
                 "contact": "+1234567890",
                 "promt_params": {
@@ -39,32 +39,6 @@
                     "reason": "Car gas",
                     "aggression": "4",
                     "style": "friendly"
-                }
-            },
-            {
-                "debtor_name": "Seba",
-                "sending_interval": "100min",
-                "last_sent": "2024-04-21 11:18:30",
-                "platform": "SMS",
-                "contact": "7082",
-                "promt_params": {
-                    "money": "50 evrov",
-                    "reason": "\u010cokolada",
-                    "aggression": "6",
-                    "style": "an angry mafia boss"
-                }
-            },
-            {
-                "debtor_name": "",
-                "sending_interval": "",
-                "last_sent": "2024-04-21 11:43:18",
-                "platform": "SMS",
-                "contact": "",
-                "promt_params": {
-                    "money": "",
-                    "reason": "",
-                    "aggression": 0,
-                    "style": ""
                 }
             }
         ]
