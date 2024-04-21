@@ -27,6 +27,18 @@ function Slider(props) {
   );
 }
 
+function TextInput(props) {
+
+  const [value, setValue] = useState(0);
+
+  return (
+    <>
+      <label htmlFor={props.id}>{props.label}</label><br/>
+      <input type="text" id={props.id} name={props.id} onChange={(e) => setValue(e.target.value)}/>
+    </>
+  );
+}
+
 const Dodaj = () => {
 
   const [name, setName] = useState('');
@@ -69,27 +81,30 @@ const Dodaj = () => {
       <div style={styleLeft}>
         <form onSubmit={handleSubmit}>
 
-        <label for="name">Name:</label><br/>
-        <input type="text" id="name" name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        /><br/>
+          <label for="name">Name:</label><br/>
+          <input type="text" id="name" name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          /><br/>
 
 
-        <label for="phnum">Phone number:</label><br/>
-        <input type="text" id="phnum" name="phnum"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-        /><br/><br/>
+          <label for="phnum">Phone number:</label><br/>
+          <input type="text" id="phnum" name="phnum"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          /><br/><br/>
 
 
-        <label for="amount">Owed amount (add units):</label><br/>
-        <input type="text" id="amount" name="amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        /><br/><br/>
+          <label for="amount">Owed amount (add units):</label><br/>
+          <input type="text" id="amount" name="amount"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          /><br/><br/>
 
-        <input type="submit" value="Add"></input>
+          <TextInput id={ "name" } label={ "Name:" }/>
+          <br/><br/>
+          
+          <input type="submit" value="Add"></input>
         </form>
       </div>
       
@@ -104,3 +119,18 @@ const Dodaj = () => {
 };
 
 export default Dodaj;
+
+/*
+
+"user": "Matevž Vidovič",
+    "debtor_name": "Sebastjan Kordiš",
+    "sending_interval": "15min",
+    "platform": "Viber",
+    "promt_params": {
+        "money": "50",
+        "reason": "Car gas",
+        "aggression": "4",
+        "style": "friendly"
+    }
+
+*/
